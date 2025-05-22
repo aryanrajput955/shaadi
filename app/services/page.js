@@ -1,18 +1,44 @@
 'use client';
 import Image from 'next/image';
-import styles from './ServicesSection.module.css';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+
+import { AnimatePresence,motion } from 'framer-motion';
+// Array of image URLs - replace with your own images
 
 export default function ServicesPage() {
+const [currentImageIndex, setCurrentImageIndex] = useState(0);
+const images = [
+  '/images/service1.jpg',
+  '/images/service2.jpg',
+  '/images/service3.jpg',
+  '/images/service4.jpg',
+];
+  // Preload images to ensure they are available
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 500); // Change image every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Header Section with Pattern Inside Text */}
-      <div className="relative bg-white">
-        <h1 className={`${styles.patternText} text-5xl md:text-7xl font-bold text-center tracking-wide py-8`}>
+      <div className="relative flex items-center justify-center font-sans  bg-cover bg-center text-white">
+        <h1 
+          className="text-6xl md:text-9xl lg:text-[12rem] font-black text-transparent bg-clip-text select-none"
+          style={{
+            backgroundImage: `url(${images[currentImageIndex]})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
           SERVICES
         </h1>
       </div>
-
       <div>
         {/* Slide 1: Destination & Venues */}
         <div id='one' className="h-screen flex items-center justify-center bg-[url('/images/service4.jpg')] bg-cover bg-center text-white bg-no-repeat overflow-hidden m-4 md:m-16 relative">
@@ -27,7 +53,7 @@ export default function ServicesPage() {
                 className="text-center mb-8 md:mb-0"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
                 <h2 className="text-5xl md:text-7xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#F4A7B9] drop-shadow-lg">
