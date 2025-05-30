@@ -24,7 +24,7 @@ const images = [
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative flex items-center justify-center font-sans  bg-cover bg-center text-white">
+      <div className="relative flex items-center justify-center font-sans pb-6.5 pt-2  bg-cover bg-center text-white">
         <h1 
           className="text-6xl md:text-9xl lg:text-[12rem] font-black text-transparent bg-clip-text select-none"
           style={{
@@ -39,7 +39,7 @@ const images = [
           SERVICES
         </h1>
       </div>
-      <div>
+      <div className='alpha' id='one'>
         {/* Slide 1: Destination & Venues */}
         <div id='one' className="h-screen flex items-center justify-center bg-[url('/images/service4.jpg')] bg-cover bg-center text-white bg-no-repeat overflow-hidden m-4 md:m-16 relative">
           {/* Gradient Overlay for Depth */}

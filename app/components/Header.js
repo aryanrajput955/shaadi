@@ -37,15 +37,15 @@ export default function Header() {
   };
 
   const navItems = [
-    'Home',
-    'About Us',
-    'Services',
-    'Our Work',
-    'Spotlight',
-    'Fun at SS',
-    'Careers',
-    'Contact',
-    'FAQs',
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Services', href: '/services' },
+    { name: 'Our Work', href: '/our-work' },
+    { name: 'Spotlight', href: '/spotlight' },
+    { name: 'Fun at SS', href: '/fun-at-ss' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'FAQs', href: '/faqs' },
   ];
 
   return (
@@ -91,17 +91,17 @@ export default function Header() {
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex space-x-4 lg:space-x-6">
           {navItems.map((item) => (
-            <li key={item}>
-              <Link href={`/${item.toLowerCase().replace(/\s/g, '-')}`}>
+            <li key={item.name}>
+              <Link href={item.href}>
                 <span
-                  onClick={() => handleLinkClick(item)}
+                  onClick={() => handleLinkClick(item.name)}
                   className={`relative inline-block text-xs lg:text-sm font-bold tracking-wide px-3 py-1 rounded-full transition-all duration-300 ease-in-out whitespace-nowrap ${
-                    activeLink === item
+                    activeLink === item.name
                       ? 'text-[#EE3164] border-b-2 border-[#EE3164] pb-1'
                       : 'text-gray-700 hover:text-[#EE3164] hover:border-b-2 hover:border-[#EE3164] transition-all duration-200 ease-in-out hover:scale-105'
                   }`}
                 >
-                  {item.toUpperCase()}
+                  {item.name.toUpperCase()}
                 </span>
               </Link>
             </li>
@@ -120,17 +120,17 @@ export default function Header() {
             >
               <ul className="flex flex-col items-center space-y-4 py-4">
                 {navItems.map((item) => (
-                  <li key={item}>
-                    <Link href={`/${item.toLowerCase().replace(/\s/g, '-')}`}>
+                  <li key={item.name}>
+                    <Link href={item.href}>
                       <span
-                        onClick={() => handleLinkClick(item)}
+                        onClick={() => handleLinkClick(item.name)}
                         className={`inline-block text-sm font-bold tracking-wide px-3 py-1 rounded-full transition-all duration-300 ease-in-out ${
-                          activeLink === item
+                          activeLink === item.name
                             ? 'text-[#EE3164] border-b-2 border-[#EE3164] pb-1'
                             : 'text-gray-700 hover:text-[#EE3164] hover:border-b-2 hover:border-[#EE3164] transition-all duration-200 ease-in-out hover:scale-105'
                         }`}
                       >
-                        {item.toUpperCase()}
+                        {item.name.toUpperCase()}
                       </span>
                     </Link>
                   </li>
