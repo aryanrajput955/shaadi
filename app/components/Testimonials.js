@@ -35,21 +35,21 @@ export default function Testimonials() {
       quote:
         "The team transformed our vision into a breathtaking reality. Their attention to detail and passion for perfection made our day unforgettable.",
       couple: "Liam & Olivia",
-      image: "/people4.webp",
+      image: "/people1.webp",
       location: "Vineyard Wedding, Tuscany",
     },
     {
       quote:
         "From start to finish, they handled everything with grace and professionalism. Our wedding was a fairytale come true, thanks to their expertise.",
       couple: "Ava & Noah",
-      image: "/people5.webp",
+      image: "/people3.webp",
       location: "Castle Wedding, Scotland",
     },
     {
       quote:
         "Their creativity and dedication turned our simple ideas into a spectacular celebration. We couldn&apos;t have asked for a better experience!",
       couple: "Isabella & Ethan",
-      image: "/people6.webp",
+      image: "/people2.webp",
       location: "Rooftop Wedding, New York",
     },
   ];
