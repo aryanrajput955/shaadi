@@ -11,37 +11,43 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      quote: "Knot & Journey created the wedding of our dreams. Every detail was perfect, and we didn't have to worry about a thing on our big day. They truly made magic happen!",
+      quote:
+        "Knot & Journey created the wedding of our dreams. Every detail was perfect, and we didn&apos;t have to worry about a thing on our big day. They truly made magic happen!",
       couple: "Sarah & Michael",
       image: "/people1.webp",
       location: "Beachside Wedding, Malibu",
     },
     {
-      quote: "Working with this team was the best decision we made. They understood our vision perfectly and executed it beyond our expectations. Our guests are still talking about it!",
+      quote:
+        "Working with this team was the best decision we made. They understood our vision perfectly and executed it beyond our expectations. Our guests are still talking about it!",
       couple: "Emma & James",
       image: "/people3.webp",
       location: "Garden Ceremony, Napa Valley",
     },
     {
-      quote: "Our destination wedding seemed impossible to plan, but they made it seamless. Every detail was handled with care and creativity. It was truly the perfect day.",
+      quote:
+        "Our destination wedding seemed impossible to plan, but they made it seamless. Every detail was handled with care and creativity. It was truly the perfect day.",
       couple: "Priya & Raj",
       image: "/people2.webp",
       location: "Palace Wedding, Udaipur",
     },
     {
-      quote: "The team transformed our vision into a breathtaking reality. Their attention to detail and passion for perfection made our day unforgettable.",
+      quote:
+        "The team transformed our vision into a breathtaking reality. Their attention to detail and passion for perfection made our day unforgettable.",
       couple: "Liam & Olivia",
       image: "/people4.webp",
       location: "Vineyard Wedding, Tuscany",
     },
     {
-      quote: "From start to finish, they handled everything with grace and professionalism. Our wedding was a fairytale come true, thanks to their expertise.",
+      quote:
+        "From start to finish, they handled everything with grace and professionalism. Our wedding was a fairytale come true, thanks to their expertise.",
       couple: "Ava & Noah",
       image: "/people5.webp",
       location: "Castle Wedding, Scotland",
     },
     {
-      quote: "Their creativity and dedication turned our simple ideas into a spectacular celebration. We couldn't have asked for a better experience!",
+      quote:
+        "Their creativity and dedication turned our simple ideas into a spectacular celebration. We couldn&apos;t have asked for a better experience!",
       couple: "Isabella & Ethan",
       image: "/people6.webp",
       location: "Rooftop Wedding, New York",

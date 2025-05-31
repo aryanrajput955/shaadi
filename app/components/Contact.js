@@ -23,7 +23,7 @@ export default function Contact() {
             Contact <span className="text-[#F49BAB]">Us</span>
           </h2>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Ready to start planning your perfect day? We'd love to hear from you and discuss how we can make your
+            Ready to start planning your perfect day? We&apos;d love to hear from you and discuss how we can make your
             wedding dreams come true.
           </p>
         </motion.div>
@@ -42,7 +42,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-medium text-xl text-gray-800 mb-2">Call Us</h3>
-                <p className="text-gray-600 mb-1">We're available Monday-Friday, 9am-6pm</p>
+                <p className="text-gray-600 mb-1">We&apos;re available Monday-Friday, 9am-6pm</p>
                 <p className="text-lg font-medium text-[#F49BAB]">+1 (555) 123-4567</p>
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-medium text-xl text-gray-800 mb-2">Email Us</h3>
-                <p className="text-gray-600 mb-1">We'll respond within 24 hours</p>
+                <p className="text-gray-600 mb-1">We&apos;ll respond within 24 hours</p>
                 <p className="text-lg font-medium text-[#F49BAB]">hello@knotandjourney.com</p>
               </div>
             </div>
