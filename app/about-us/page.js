@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-// Array of image URLs - replace with your own images  
 export default function About() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
@@ -13,7 +12,6 @@ export default function About() {
     '/images/service4.jpg',
   ];
 
-  // Team data
   const teamMembers = [
     {
       name: "Sarah Johnson",
@@ -35,7 +33,6 @@ export default function About() {
     }
   ];
 
-  // Gentle animation variants
   const gentleFadeIn = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
@@ -65,18 +62,31 @@ export default function About() {
     }
   };
 
-  // Preload images to ensure they are available   
+  const floatingAnimation = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatType: "reverse"
+      }
+    }
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 500);
+    }, 500); // Restored to original 500ms interval for faster transition
 
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-orange-50">
-      {/* Animated Header with soft background */}
+      {/* Original Animated Header - Restored Exactly */}
       <div className="relative flex items-center justify-center font-sans py-24 bg-gradient-to-b from-white/50 to-transparent">
         <div className="absolute inset-0 bg-gradient-to-r from-pink-100/20 via-rose-100/30 to-orange-100/20"></div>
         <h1 
@@ -114,7 +124,6 @@ export default function About() {
             style={{ backgroundColor: 'rgba(249, 207, 202, 0.3)' }}
             variants={softScale}
           >
-            {/* Subtle decorative elements */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-pink-200/30 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-rose-200/30 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
             
@@ -127,9 +136,119 @@ export default function About() {
         </div>
       </motion.section>
 
+      {/* Our Goal Section */}
+      <motion.section 
+        className="px-8 md:px-16 lg:px-32 py-20 relative overflow-hidden"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={staggerContainer}
+      >
+        {/* Decorative floating elements */}
+        <motion.div 
+          className="absolute top-1/4 left-10 w-16 h-16 rounded-full bg-pink-200/30 blur-xl"
+          variants={floatingAnimation}
+        />
+        <motion.div 
+          className="absolute bottom-1/3 right-20 w-24 h-24 rounded-full bg-rose-200/30 blur-xl"
+          variants={floatingAnimation}
+          transition={{ delay: 0.5 }}
+        />
+        
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-light text-gray-600 mb-12 text-center tracking-wide"
+            variants={gentleFadeIn}
+          >
+            Our Goal
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              className="relative h-96 rounded-3xl overflow-hidden shadow-lg"
+              variants={softScale}
+            >
+              <Image
+                src="/images/bg8.jpg"
+                alt="Happy couple"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8 text-white">
+                <h3 className="text-2xl font-medium mb-2">Creating Lasting Bonds</h3>
+                <p className="font-light">We measure our success by the happiness we help create</p>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="space-y-8"
+              variants={staggerContainer}
+            >
+              <motion.div 
+                className="flex items-start gap-6"
+                variants={gentleFadeIn}
+              >
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-12 h-12 rounded-full bg-pink-100/50 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-medium text-gray-700 mb-2">Holistic Compatibility</h3>
+                  <p className="text-gray-600 font-light">
+                    To go beyond surface-level matching by considering emotional, intellectual, and spiritual compatibility in our pairing algorithms.
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-start gap-6"
+                variants={gentleFadeIn}
+              >
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-12 h-12 rounded-full bg-pink-100/50 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-medium text-gray-700 mb-2">Safe Environment</h3>
+                  <p className="text-gray-600 font-light">
+                    To maintain the highest standards of privacy and security, ensuring our members feel completely safe in their search for love.
+                  </p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-start gap-6"
+                variants={gentleFadeIn}
+              >
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-12 h-12 rounded-full bg-pink-100/50 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-medium text-gray-700 mb-2">Authentic Connections</h3>
+                  <p className="text-gray-600 font-light">
+                    To foster genuine relationships by encouraging vulnerability, honest communication, and meaningful interactions from the very beginning.
+                  </p>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Team Section */}
       <motion.section 
-        className="px-8 md:px-16 lg:px-32 py-20"
+        className="px-8 md:px-16 lg:px-32 py-20 bg-gradient-to-b from-white/50 to-transparent"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
@@ -163,7 +282,6 @@ export default function About() {
               >
                 <div className="relative mb-8">
                   <div className="relative w-36 h-36 mx-auto mb-6">
-                    {/* Soft glow effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-pink-200 to-rose-200 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-700"></div>
                     <Image
                       src={member.image}

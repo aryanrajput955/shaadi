@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('Services');
+  const [activeLink, setActiveLink] = useState('Home');
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

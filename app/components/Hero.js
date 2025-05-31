@@ -25,9 +25,9 @@ export default function Hero() {
       className="relative min-h-screen w-screen flex items-center justify-center overflow-hidden pt-20"
     >
       <motion.div style={{ opacity: heroOpacity, scale: heroScale }} className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-pink-50/80 via-transparent to-pink-50/80 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/60 z-10" />
         <Image
-          src="/images/service2.jpg"
+          src="/images/bg9.webp"
           alt="Wedding couple"
           fill
           className="object-cover"
@@ -43,7 +43,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="inline-block bg-[#F49BAB]/10 text-[#EE3164] px-6 py-2 rounded-full text-sm font-medium mb-6"
           >
-            NEW-AGE WEDDING PLANNERS
+          Next-Gen Wedding Curators
           </motion.div>
 
           <motion.h1
